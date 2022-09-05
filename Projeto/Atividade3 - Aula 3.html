@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - aula 3</title>
+</head>
+
+<body>
+    <main>
+        <label>Informe uma palavra: </label>
+        <input type="text" id="palavra">
+        <button id="b">Clique Aqui</button>
+
+        <script type="text/javascript">
+
+            function palindromaC(text) {
+                var text = document.getElementById('palavra').value;
+                let j = text.length - 1;
+                for (let i = 0; i < j / 2; i++) {
+                    let x = text[i];
+                    let y = text[j - i];
+                    if (x != y) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            document.getElementById("b").addEventListener('click', function (text) {
+                let ans = palindromaC(text);
+                if (ans == true) {
+                    alert('É palindromo!!');
+                }
+                else {
+                    alert('Não é palindromo!!');
+                }
+            });
+
+        </script>
+    </main>
+</body>
+
+</html>

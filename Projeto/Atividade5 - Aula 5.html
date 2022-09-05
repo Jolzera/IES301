@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carro</title>
+</head>
+
+<body>
+    <main>
+        <form method="post" action="">
+            <label>Informe a marca do carro: </label>
+            <input type="text" id="marca">
+            <br><br>
+            <label>Informe o ano do carro: </label>
+            <input type="number" id="ano">
+            <br><br>
+            <label>Informe a cor do carro: </label>
+            <input type="text" id="cor">
+            <br><br>
+            <label>Informe a Quilometragem do carro: </label>
+            <input type="number" id="quilo">
+            <br><br>
+            <label>Informe o valor do carro: </label>
+            <input type="text" id="valor"><br>
+
+            <button id="b">Clique Aqui</button>
+
+            <script type="text/javascript">
+               document.getElementById("b").addEventListener('click', function() {
+                    var carro = {
+                        marca: document.getElementById("marca").value, ano: document.getElementById("ano").value,
+                        cor: document.getElementById("cor").value, quilo: document.getElementById("quilo").value, valor: document.getElementById("valor").value,
+    
+                        anosUtilizacao: function () {
+                            var anoAtual = 2022;
+                            return anoAtual - carro.ano;
+                        },
+    
+                        valorMercado: function () {
+                            if (carro.quilo <= 30.000)
+                                return carro.valor * 1.1;
+                            if (carro.quilo >= 30.000 && carro.quilo <= 50.000)
+                                return carro.valor * 1;
+                            else
+                                return carro.valor * 0.9;
+                        }
+                    };
+                
+                document.write("Seu carro tem " + carro.anosUtilizacao() + " anos<br>");
+                document.write("O valor de mercado do seu carro é de " + carro.valorMercado());
+            });
+            </script>
+
+        </form>
+    </main>
+</body>
+
+</html>
