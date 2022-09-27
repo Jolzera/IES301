@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        var i = 0;
+        var txt = 'Venha estudar na fatec!!';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+
+       /* import React from 'react';
+        import Typewriter from "typewriter-effect";
+
+        function APP(){
+            const element = (
+                <div className="APP">
+                    <Typewriter
+
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString("Venha estudar na fatec")
+                                .start();
+                        }}
+                    />
+                </div>
+            );
+            ReactDOM.render(element, document.getElementById('root'));
+        }
+       // setTimeout(APP, 10000);
+        APP();*/
+
+
+    </script>
+</body>
+
+</html>
