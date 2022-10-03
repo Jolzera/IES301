@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade4 - Aula 4</title>
+</head>
+
+<body>
+    <label>Informe um valor para ser armazenado: </label>
+    <input type="text" id="nome" value="">
+    <button type="submit" id="b" onclick="adicionar()">Adiciona</button>
+    <button type="submit" onclick="mostrar()">Mostrar</button>
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        var vet = [];
+        function adicionar() {
+            var nome = document.getElementById("nome").value.toLowerCase();
+            vet.push(nome);
+            vet.sort();
+            console.log(vet);
+            document.getElementById('nome').value = '';
+            return vet;
+
+        }
+        function mostrar() {
+            document.write(vet);
+            console.log();
+        }
+
+    </script>
+</body>
+
+</html>
